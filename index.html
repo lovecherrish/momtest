@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mirrors of Midnight</title>
+  <link rel="icon" type="image/png" href="assets/Logo.png">
+  <style>
+    @font-face {
+      font-family: 'FontCC';
+      src: url("assets/fonts/Coraline's Cat.ttf") format('truetype');
+    }
+    
+    @font-face {
+      font-family: 'FontDK';
+      src: url('assets/fonts/DK Jambo.otf') format('opentype');
+    }
+
+    @font-face {
+      font-family: 'FontSpin';
+      src: url('assets/fonts/SPINSTEE.TTF') format('truetype');
+    }
+    
+    @font-face {
+      font-family: 'FontVamp';
+      src: url('assets/fonts/Vampire Zone.ttf') format('truetype');
+    }
+    
+    body {
+      /* 💡 MURNI BACKGROUND UTAMA SAJA */
+      background-image: url('assets/BG 1 Verti Bintang.png');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      margin: 0;
+      height: 100vh;
+      font-family: 'FontDK', 'Georgia', serif;
+      
+      /* Membuat judul otomatis berada di tengah layar */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative; /* Menjadi acuan posisi logo */
+      overflow: hidden; 
+    }
+
+    /* PENGATURAN LOGO DI POJOK KIRI ATAS */
+    .header-logo {
+      position: absolute;
+      top: 20px;  
+      left: 20px; 
+      z-index: 10; 
+    }
+    
+    .logo-web {
+      width: 150px; 
+      height: auto;
+    }
+
+    /* PENGATURAN TULISAN DI TENGAH */
+    .hero-container {
+      text-align: center;
+      color: #f0edf5;
+      padding: 20px;
+      max-width: 800px; 
+      z-index: 5; 
+    }
+
+    .judul-utama {
+      font-size: 35px;
+      font-weight: normal;
+      line-height: 1.6;
+      margin: 0;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    /* MENGATUR POSISI DAN UKURAN TOMBOL */
+    .menu-aset-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;              
+      margin-top: 40px;       
+    }
+
+    .aset-link {
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .aset-link:hover {
+      transform: scale(1.05); 
+    }
+
+    .img-aset {
+      width: 151.8px;         /* Ukuran presisi 151.8px sesuai keinginan Anda */
+      height: auto;           
+      border-radius: 50%;     /* Membuat area luar dan efek glow menjadi lingkaran sempurna */
+    }
+
+    /* KODE CSS UNTUK MENGATUR GAYA TEKS DI BAWAH TOMBOL */
+    .text-aset {
+      display: inline-block; 
+      margin-top: 12px;      
+      font-size: 14px;
+      font-family: 'Georgia', serif;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    /* ANIMASI GLOW KEDAP-KEDIP BERBENTUK LINGKARAN (CIRCLE) */
+    @keyframes glowBlack {
+      0%, 100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); }
+      50% { box-shadow: 0 0 25px 5px rgba(255, 255, 255, 0.6); }
+    }
+
+    @keyframes glowPink {
+      0%, 100% { box-shadow: 0 0 10px rgba(255, 105, 180, 0.3); }
+      50% { box-shadow: 0 0 25px 5px rgba(255, 105, 180, 0.9); }
+    }
+
+    @keyframes glowVermillion {
+      0%, 100% { box-shadow: 0 0 10px rgba(227, 66, 52, 0.3); }
+      50% { box-shadow: 0 0 25px 5px rgba(227, 66, 52, 0.9); }
+    }
+
+    @keyframes glowChartreuse {
+      0%, 100% { box-shadow: 0 0 10px rgba(127, 255, 0, 0.3); }
+      50% { box-shadow: 0 0 25px 5px rgba(127, 255, 0, 0.9); }
+    }
+
+    /* KUNCI BIAR KEDIPNYA BARENG: Semua disetel berdurasi sama rata yaitu 2 detik (2s) */
+    .glow-black { animation: glowBlack 2s infinite ease-in-out; }
+    .glow-pink { animation: glowPink 2s infinite ease-in-out; }
+    .glow-vermillion { animation: glowVermillion 2s infinite ease-in-out; }
+    .glow-chartreuse { animation: glowChartreuse 2s infinite ease-in-out; }
+
+    /* === REKOMENDASI UNTUK MOBILE (HP) === */
+    @media (max-width: 768px) {
+      .header-logo {
+        top: 15px;  
+        left: 15px;
+      }
+
+      .logo-web {
+        width: 90px; 
+      }
+
+      .judul-utama {
+        font-size: 20px; 
+        line-height: 1.5;
+      }
+
+      .menu-aset-container {
+        flex-wrap: wrap;     
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .img-aset {
+        width: 75px;         
+      }
+
+      .text-aset {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+
+<body oncontextmenu="return false;">
+
+  <!-- Logo dikunci di pojok kiri atas -->
+  <header class="header-logo">
+    <a href="index.html">
+    <img src="assets/Logo.png" alt="Logo" class="logo-web">
+    </a>
+  </header>
+
+  <!-- Judul dan menu tombol disatukan di dalam wadah tengah -->
+  <div class="hero-container" style="margin-top: -150px;">
+    <h2 class="judul-utama" style="margin-bottom: 50px;">
+      We’ve been waiting for you... <br>
+      You could stay here forever if you like. <br>
+      There's just one little thing we have to do...
+    </h2>
+
+    <!-- BAGIAN 4 ASET GAMBAR SEJAJAR BER-LINK -->
+    <div class="menu-aset-container">
+      
+      <!-- Aset 1 -->
+      <a href="about.html" class="aset-link">
+        <img src="assets/Button_Black.png" alt="About" class="img-aset glow-black">
+        <br><span class="text-aset" style="color: #ffffff; font-size: 16px; font-family: 'FontVamp';">About</span> 
+      </a>
+
+      <!-- Aset 2 -->
+      <a href="rules.html" class="aset-link">
+        <img src="assets/Button_Pink.png" alt="Rules" class="img-aset glow-pink">
+        <br><span class="text-aset" style="color: #ffffff; font-size: 16px; font-family: 'FontVamp';">Rules</span>
+      </a>
+
+      <!-- Aset 3 -->
+      <a href="htj.html" class="aset-link">
+        <img src="assets/Button_Vermillion.png" alt="HTJ" class="img-aset glow-vermillion">
+        <br><span class="text-aset" style="color: #ffffff; font-size: 16px; font-family: 'FontVamp';">HTJ</span>
+      </a>
+
+      <!-- Aset 4 -->
+      <a href="caretaker.html" class="aset-link">
+        <img src="assets/Button_Chartreuse.png" alt="CT" class="img-aset glow-chartreuse">
+        <br><span class="text-aset" style="color: #ffffff; font-size: 16px; font-family: 'FontVamp';">Caretaker</span>
+      </a>
+
+    </div>
+  
+  </div>
+
+</body>
+</html>
